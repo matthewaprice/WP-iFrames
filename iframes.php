@@ -8,6 +8,8 @@ Version: 1.0
 Author URI: http://matthewaprice.com
 */
 
+if ( !defined( 'ABSPATH' ) ) exit;
+
 function map_iframes_display( $atts, $shortcode = false ) {
 
 	if ( $shortcode )
