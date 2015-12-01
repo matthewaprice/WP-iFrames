@@ -11,7 +11,10 @@ Author URI: http://matthewaprice.com
 if ( !defined( 'ABSPATH' ) ) exit;
 
 function map_iframes_display( $atts, $shortcode = false ) {
-
+	
+	if ( empty( $atts['src'] ) )
+		return false;
+		
 	if ( $shortcode )
 	 	ob_start();
 
