@@ -15,11 +15,8 @@ function map_iframes_display( $atts, $shortcode = false ) {
 	if ( $shortcode )
 	 	ob_start();
 
-	$wrapper_id = 'iframe_anchor-' . rand( 100000,999999 );
-	if ( !empty( $atts['wrapper_id'] ) )
-		$wrapper_id = 'iframe_anchor-' . $atts['wrapper_id'];
  	?>
- 	<div id="<?php echo $wrapper_id; ?>" class="iframe-anchor"> 	
+ 	<div id="<?php echo $atts['wrapper_id']; ?>" class="iframe-anchor"> 	
 	 	<iframe src="<?php echo $atts['src']; ?>" width="<?php echo $atts['width']; ?>" height="<?php echo $atts['height']; ?>" frameborder="0" allowfullscreen></iframe>
  	</div>
  	<?php
@@ -39,7 +36,8 @@ function map_iframes_display_shortcode( $atts ) {
 			array(
 				'src' => '',
 				'width' => '600',
-				'height' => '450'
+				'height' => '450',
+				'wrapper_id' => 'iframe_anchor-' . rand( 100000,999999 )
 			),
 			$atts
 		)
